@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     @if (isLoggedIn) {
         <p>Bienvenido, {{ username }} </p>
         <img (click)="greet()" src="https://github.com/dieego17.png" alt="photo">
@@ -12,7 +12,25 @@
         </button>
     }
 
-    <app-games useername = {{ username }} />
+    <app-games username = {{ username }} />
+</section>
+
+
+ -->
+
+ <section>
+    <!-- Utiliza *ngIf para la lógica condicional -->
+    <ng-container *ngIf="isLoggedIn">
+        <p>Bienvenido, {{ username }} </p>
+        <img (click)="greet()" src="https://github.com/dieego17.png" alt="photo">
+        <button (click)="isLoggedIn = false">Log Out</button>
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn">
+        <p>Inicia Sesión</p>
+        <button (click)="isLoggedIn = true">Log In</button>
+    </ng-container>
+    <app-games username = {{username}}></app-games>
+    <app-user-card />
 </section>
 
 

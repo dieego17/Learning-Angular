@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
     <ul>
       <!-- for para recorrer games y le indicamos el identificador unico de cada juego -->
       @for (game of games; track game.id) {
-        <li>{{ game.name }}</li>
+        <li>{{ game.name }}</li>    
       }
     </ul>
   `,
